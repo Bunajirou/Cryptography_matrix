@@ -4,6 +4,7 @@ import numpy as np
 import sympy
 from sympy import mod_inverse
 
+# 鍵の生成
 def create_key():
     n = 95
     max_prime = pow(10, 3)
@@ -27,6 +28,7 @@ def create_key():
     d_box.insert(tk.END, d)
 
 
+# 暗号化
 def encryption():
     A = 32
     n = 127-A
@@ -69,6 +71,7 @@ def encryption():
     output_box.insert(tk.END, c_txt)
 
 
+# 復号
 def decryption():
     A = 32
     n = 127-A
@@ -107,7 +110,7 @@ def decryption():
     p_txt_list = []
     for i in p_ascii_list:  # ASCIIコードを文字へ変換
         p_txt_list.append(chr(i+A))
-    if(p_txt_list[-1]==' '):
+    if(p_txt_list[-1]==' '):  # 最後の文字がスペースなら削除
         p_txt_list.pop()
 
     p_txt = (''.join(p_txt_list))  # リスト内の文字を結合
