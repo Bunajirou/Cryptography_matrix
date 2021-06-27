@@ -1,8 +1,8 @@
 import numpy as np
 import sympy
 
-A =32
-n = 127 - A
+A = 32
+n = 127-A
 
 a=int(input('a='))
 b=int(input('b='))
