@@ -125,11 +125,19 @@ def check_rdo():
         invar.set('<平文を入力>')
         outvar.set('<暗号文')
         keyvar.set('<暗号化鍵を入力>　または　<暗号化鍵を生成>')
+        key_button.pack(
+            side=tk.RIGHT,
+            expand=True,
+            anchor=tk.NE,
+            pady=80,
+            padx=80
+        )
     else:
         run_button = tk.Button(text='復号化実行', command=decryption)
         invar.set('<暗号文を入力>')
         outvar.set("<平文>")
         keyvar.set('<暗号化鍵を入力>')
+        key_button.pack_forget()
     run_button.place(x=260, y=208)
     input_box.delete(0, tk.END)
     output_box.delete(0, tk.END)
@@ -177,7 +185,6 @@ if __name__ == '__main__':
 
     # ボタンの作成
     key_button = tk.Button(text='暗号化鍵を生成',command=create_key)
-    key_button.place(x=205, y=53)
 
     # ラジオボタンの作成
     mode = tk.IntVar()
@@ -188,5 +195,6 @@ if __name__ == '__main__':
     en_rdo.place(x=10, y=160)
 
     check_rdo()
+
 
 root.mainloop()
